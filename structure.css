@@ -1,0 +1,53 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+:root {
+  --bg-color: #303030;
+  --sc-bg-color: #f44c7f;
+  --text-color: #f2faff;
+  --sc-text-color: #ff0008;
+}
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.header {
+  min-height: 10vh;
+}
+.main {
+  min-height: 80vh;
+}
+.footer {
+  min-height: 10vh;
+}
+.icon {
+  min-width: 10%;
+}
+.bi {
+  color: var(--sc-bg-color);
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-color);
+}
+.nav-link:hover {
+  color: var(--sc-text-color);
+  scale: 1.1;
+}
+
+@media (min-width: 768px) {
+  .left {
+    width: 60%;
+  }
+  .right {
+    width: 30%;
+  }
+}
