@@ -10,124 +10,344 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="locomotive-scroll.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="component.css" />
+    <link rel="stylesheet" href="structure.css" />
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
       defer
     ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="component.css" />
-    <link rel="stylesheet" href="structure.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      defer
+    ></script>
+    <script src="locomotive-scroll.min.js" defer></script>
+    <script src="script.js" defer></script>
     <title>DannyWits-Portfolio</title>
   </head>
 
   <body>
-    <div
-      class="header navbar navbar-light navbar-expand-md justify-content-between mb-2 mx-2"
-    >
-      <div class="navbar-brand">
-        <a
-          class="link-underline-danger link-underline-opacity-0 link-underline-opacity-75-hover"
-          href=""
-        >
-          <div class="d-flex align-items-center gap-3">
-            <i class="bi bi-code-slash" style="font-size: 5vh"> </i>
-            <span class="d-flex">
-              <h2 class="m-0">Danny</h2>
-              <h2 class="m-0" style="color: var(--sc-text-color)">Wits</h2>
-            </span>
-          </div>
-        </a>
-      </div>
-
-      <div class="navbar-nav">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navPane"
-        >
-          <i class="bi bi-list" style="font-size: 5vh"></i>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navPane">
-          <div class="navbar-nav m-auto gap-2">
-            <div class="nav-item">
-              <a class="nav-link icon-link-hover" href="*" target="_blank"
-                >Resume</a
-              >
+    <div class="pages" data-scroll-container>
+      <div
+        class="header navbar navbar-dark navbar-expand-md justify-content-between mb-2 mx-3"
+      >
+        <div class="navbar-brand">
+          <a
+            class="link-underline-danger link-underline-opacity-0 link-underline-opacity-75-hover"
+            href=""
+          >
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-code-slash" style="font-size: 5vh"> </i>
+              <span class="d-flex">
+                <h2 class="m-0">Danny</h2>
+                <h2 class="m-0" style="color: var(--sc-text-color)">Wits</h2>
+              </span>
             </div>
+          </a>
+        </div>
 
-            <div class="nav-item">
-              <a class="nav-link" href="*" target="_blank">Education</a>
-            </div>
-            <div class="nav-item">
-              <a class="nav-link" href="*" target="_blank">Contact</a>
+        <div class="navbar-nav">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navPane"
+          >
+            <i class="bi bi-list" style="font-size: 5vh"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navPane">
+            <div class="navbar-nav m-auto gap-2">
+              <div class="nav-item">
+                <a
+                  class="nav-link icon-link-hover"
+                  href="https://github.com/Danny-Wits/Danny-Wits/blob/main/Danishwer_InternshalaResume%20.pdf"
+                  target="_blank"
+                  ><i class="bi bi-file-earmark-richtext-fill"></i> Resume</a
+                >
+              </div>
+
+              <div class="nav-item">
+                <a class="nav-link" onclick="{scrollToID('education')}"
+                  ><i class="bi bi-book-half"></i> Education</a
+                >
+              </div>
+              <div class="nav-item">
+                <a class="nav-link" onclick="{scrollToID('projects')}"
+                  ><i class="bi bi-laptop"></i> Projects</a
+                >
+              </div>
+              <div class="nav-item">
+                <a
+                  class="nav-link"
+                  href="https://github.com/Danny-Wits"
+                  target="_blank"
+                >
+                  <i class="bi bi-envelope-at"></i> Contact</a
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div
-      class="main d-flex flex-column flex-md-row justify-content-evenly align-items-center mx-3"
-    >
-      <div class="left">
-        <h1>DannyWits</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-          voluptates veritatis ipsum molestias amet iure cum recusandae iste
-          voluptatem corrupti esse facere rerum dicta, obcaecati facilis
-          accusamus explicabo maxime officia possimus magni hic eum
-          exercitationem? Facere iure optio culpa nihil?
-        </p>
+      <div
+        class="main d-flex flex-column flex-md-row justify-content-evenly align-items-center mx-3"
+        data-scroll-section
+      >
+        <div class="left">
+          <h1>Hi <i class="bi bi-journal-code" style="font-size: 2rem"></i></h1>
+          <p>
+            I am a young and passionate software developer with a strong
+            foundation in coding and a keen eye for detail. With experience in
+            creating robust, efficient, and scalable applications, I thrive on
+            solving complex problems and turning ideas into reality. My journey
+            in software development has allowed me to work with a diverse set of
+            technologies, honing my skills in both front-end and back-end
+            development.
+          </p>
+        </div>
+        <div class="right">
+          <h1>
+            Tech Stack
+            <i class="bi bi-stack" style="font-size: 2rem"></i>
+          </h1>
+          <div class="flex flex-row">
+            <div class="skills">
+              <i class="bi bi-browser-edge"></i> JavaScript, PHP , HTML, CSS,
+              BootStrap, Tailwind, GSAP
+            </div>
+            <div class="skills">
+              <i class="bi bi-file-earmark-code"></i> C, C++ ,Java , Python , GD
+              Script
+            </div>
+            <div class="skills">
+              <i class="bi bi-gear-wide-connected"> </i>React, JSwing,
+              Unity,Processing , Tailwind, Godot
+            </div>
+            <div class="skills">
+              <i class="bi bi-database-check"></i>
+              MySQL, MongoDB, PostgreSQL
+            </div>
+            <div class="skills">
+              <i class="bi bi-tools"></i> Git, VS Code, MS-Suite
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="right">
-        <h1>Projects</h1>
-        <ul>
-          <li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-            similique.
-          </li>
-          <li>
-            Debitis dolores nobis reprehenderit quod fugiat quia molestias iure
-            labore?
-          </li>
-          <li>
-            Nisi fugiat ipsa laborum itaque similique eius sint, exercitationem
-            dolorum.
-          </li>
-          <li>
-            Fugit sit est repudiandae quia alias dolore explicabo provident
-            cupiditate?
-          </li>
-          <li>
-            Voluptatum ab saepe laboriosam at dolores nesciunt optio ex iure.
-          </li>
-        </ul>
+
+      <div
+        class="main last-page d-flex flex-column flex-md-row justify-content-evenly align-items-center mx-3"
+        data-scroll-section
+        id="projects"
+      >
+        <div class="d-flex flex-column mb-3">
+          <h2>Projects <i class="bi bi-laptop" style="font-size: 2rem"></i></h2>
+          <div class="flex-column flex-md-row gap-3" style="display: flex">
+            <div class="project">
+              <div class="card bg-dark text-white">
+                <img
+                  class="card-img-top"
+                  src="https://github-production-user-asset-6210df.s3.amazonaws.com/114674838/357200833-3521966f-2c5a-478d-b12b-86c93f8dc049.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240815%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240815T125824Z&X-Amz-Expires=300&X-Amz-Signature=f6ecf1d2f43a51a88ba9178237a8f16e2262404677b405b11430a9ab68f9e9f2&X-Amz-SignedHeaders=host&actor_id=114674838&key_id=0&repo_id=836817240"
+                  alt="Code Runner"
+                  width="360"
+                  height="240"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Code Runner</h5>
+                  <p class="card-text">
+                    A simple Code editing and running tool for beginners
+                  </p>
+                  <a
+                    href="https://github.com/Danny-Wits/CodeRunner"
+                    class="btn btn-outline-danger"
+                    target="_blank"
+                    >Source Code</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="project">
+              <div class="card bg-dark text-white">
+                <img
+                  class="card-img-top"
+                  src="https://private-user-images.githubusercontent.com/114674838/358226591-13f0ec70-7354-41ef-af23-5aebf76c3502.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM3MjczNzksIm5iZiI6MTcyMzcyNzA3OSwicGF0aCI6Ii8xMTQ2NzQ4MzgvMzU4MjI2NTkxLTEzZjBlYzcwLTczNTQtNDFlZi1hZjIzLTVhZWJmNzZjMzUwMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwODE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDgxNVQxMzA0MzlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YWI2NTg3YmQ5NGY4MGM4OGQ1ZmFkNGM3ZjdjMDVkYmI0OWQ2ODBlMmM4ZjNlNGJiNzhjZGFkMTg0MzRhNDJiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.j6njcOp3I9unBMQTrZr5He8VeCRnkBJqgLJ3AOQhLMQ"
+                  alt="Get Vitals"
+                  width="360"
+                  height="240"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Get Vitals</h5>
+                  <p class="card-text">
+                    A Nutrition and Calories Tracking app with Clean and
+                    Colourful UI.
+                  </p>
+                  <a
+                    href="https://github.com/Danny-Wits/getVitals"
+                    class="btn btn-outline-danger"
+                    target="_blank"
+                    >Source Code</a
+                  >
+                  <a
+                    href="https://getvitals.netlify.app/"
+                    class="btn btn-outline-danger"
+                    target="_blank"
+                    >Visit Site</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="project">
+              <div class="card bg-dark text-white">
+                <img
+                  class="card-img-top"
+                  src="https://private-user-images.githubusercontent.com/114674838/358235003-a3b03f9e-ef1e-4cd2-bd3d-955dcb966d68.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM3MjkyMjYsIm5iZiI6MTcyMzcyODkyNiwicGF0aCI6Ii8xMTQ2NzQ4MzgvMzU4MjM1MDAzLWEzYjAzZjllLWVmMWUtNGNkMi1iZDNkLTk1NWRjYjk2NmQ2OC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwODE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDgxNVQxMzM1MjZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02YTM5NDk4M2Y0ZjczNjZlYmM3YTZiZjFkNjUzMDMxNDgwMzY1ZTU5MTdmZTI1YTU3NjFmNWE5NGRmYjQ2NmU1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.eJbNsiJK9KTJImdM9IhQC_CQGOoecod9_75ivmN51NI"
+                  alt="Perceptron"
+                  width="360"
+                  height="240"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Perceptron</h5>
+                  <p class="card-text">
+                    Perceptron(one Layer Neural Network ) in Processing Java;
+                  </p>
+                  <a
+                    href="https://github.com/Danny-Wits/persceptron"
+                    class="btn btn-outline-danger"
+                    target="_blank"
+                    >Source Code</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="project">
+              <div class="card bg-dark text-white">
+                <img
+                  class="card-img-top"
+                  src="https://private-user-images.githubusercontent.com/114674838/358237579-8b8f6674-5328-402c-8fe3-40460f9d6a57.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM3Mjk3OTgsIm5iZiI6MTcyMzcyOTQ5OCwicGF0aCI6Ii8xMTQ2NzQ4MzgvMzU4MjM3NTc5LThiOGY2Njc0LTUzMjgtNDAyYy04ZmUzLTQwNDYwZjlkNmE1Ny5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwODE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDgxNVQxMzQ0NThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NWJlODczZWZkODBlZTljMGFkMDkyMTkyNTgyN2JjYzRiYTg1YmUyMmVmOTcwOTVjYjFhY2Y0YWUzY2YyZjkzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.SfVAAxbELjsAtopSgTI-M7-DzSKoeflaSfATB7EpBq4"
+                  alt="Fractal Tree"
+                  width="360"
+                  height="240"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Fractal Tree</h5>
+                  <p class="card-text">
+                    A Fractal Tree Algorithm implementation using Processing
+                  </p>
+                  <a
+                    href="https://github.com/Danny-Wits/fractalTree"
+                    class="btn btn-outline-danger"
+                    target="_blank"
+                    >Source Code</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="d-flex align-items-center mx-3">
-      <div class="socials w-50 d-flex gap-5 gap-lg-0">
-        <a class="icon-link icon-link-hover icon" href="github">
-          <i class="bi bi-github"></i>
-        </a>
-        <a class="icon-link icon-link-hover icon" href="github">
-          <i class="bi bi-facebook"></i>
-        </a>
-        <a class="icon-link icon-link-hover icon" href="github">
-          <i class="bi bi-calculator"></i>
-        </a>
+
+      <div
+        class="main last-page d-flex flex-column flex-md-row justify-content-evenly align-items-center mx-3"
+        data-scroll-section
+      >
+        <div class="right" id="education">
+          <h1>Education <i class="bi bi-journal-bookmark"></i></h1>
+          <p>
+            Bachelor of Computer Applications (BCA),<br />
+            Computer Application Government Degree College, Doda <br />2022 -
+            2026
+          </p>
+        </div>
+        <div class="left">
+          <h1>Other Skills</h1>
+          <ul>
+            <li>
+              <i class="bi bi-calculator"></i>
+              Strong hold on Mathematical Concepts : Sets Theory , Calculus ,
+              Discrete Mathematics
+            </li>
+            <li>
+              <i class="bi bi-diagram-3"></i>
+              Good understanding of Data Structure and Algorithms [
+              <a class="link-danger" href="https://github.com/Danny-Wits/DSA">
+                DSA</a
+              >,
+              <a
+                class="link-danger"
+                href="https://www.hackerrank.com/profile/dannywits12321"
+              >
+                HackerRank</a
+              >]
+            </li>
+            <li>
+              <i class="bi bi-card-list"></i>
+              Worked on various small project using various different frameworks
+              and languages. {
+              <a
+                class="link-danger"
+                href="https://github.com/Danny-Wits?tab=repositories"
+                target="_blank"
+              >
+                Repositories</a
+              >
+              }
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="socials w-50 d-flex gap-5 gap-lg-0">
+          <a
+            class="icon-link icon-link-hover icon"
+            href="https://github.com/Danny-Wits"
+            target="_blank"
+          >
+            <i class="bi bi-github"></i>
+          </a>
+          <a
+            class="icon-link icon-link-hover icon"
+            href="https://www.upwork.com/freelancers/~014b16c08775bdc70f?mp_source=share"
+            target="_blank"
+          >
+            <i class="bi bi-person-workspace"></i>
+          </a>
+          <a
+            class="icon-link icon-link-hover icon"
+            href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=dannywits@gmail.com"
+            target="_blank"
+          >
+            <i class="bi bi-envelope-arrow-up"></i>
+          </a>
+          <a
+            class="icon-link icon-link-hover icon"
+            onclick="{scrollToID('education')}"
+          >
+            <i class="bi bi-book-half"></i>
+          </a>
+          <a
+            class="icon-link icon-link-hover icon"
+            onclick="{scrollToID('projects')}"
+          >
+            <i class="bi bi-laptop"></i>
+          </a>
+        </div>
       </div>
     </div>
   </body>
